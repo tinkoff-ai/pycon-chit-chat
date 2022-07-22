@@ -13,6 +13,7 @@ transformers = "^4.20.1"
 datasets = "^2.3.2"
 torchserve = "^0.6.0"
 typer = "^0.6.1"
+scikit-learn = "^1.1.1"
 
 [tool.poetry.dev-dependencies]
 
