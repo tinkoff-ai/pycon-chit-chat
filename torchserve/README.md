@@ -20,15 +20,13 @@ torch-model-archiver --model-name gpt --version 1.0 \
 ```bash
 docker run --rm -d --shm-size=1g \
         --env LC_ALL="C.UTF-8" \
-        --env TORCH_JIT_DISABLE_NEW_EXECUTOR="1" \
         --env LANG="C.UTF-8" \
-        --gpus '"device=5"' \
         --ulimit memlock=-1 \
         --ulimit stack=67108864 \
         -p 8898:8080 \
-        --name ts_model_jit \
+        --name torchserve \
         --mount type=bind,source=$(pwd)/torchserve_registry,target=/tmp/models \
-        pytorch/torchserve:0.4.2-gpu torchserve --start --model-store=/tmp/models --models gpt=gpt.mar --ncs
+        pytorch/torchserve:0.4.2-cpu torchserve --start --model-store=/tmp/models --models gpt=gpt.mar --ncs
         
 sudo bash -c 'echo "привет" >> data.txt'
 # it will take up to 2 minutes (model needs to warm up)
