@@ -8,7 +8,7 @@ class TelegramSettings(BaseSettings):
     token: str
 
     class Config:
-        env_prefix = 'TG_'
+        env_prefix = 'TG_BOT'
 
 
 tg_settings = TelegramSettings()

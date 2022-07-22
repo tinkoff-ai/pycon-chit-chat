@@ -39,4 +39,4 @@ class SomeHandler(BaseHandler):
     def handle(self, data: List[Dict[str, Union[str, bytes, bytearray]]], context: Context) -> List[str]:
         self.context = context
         text = self.get_text_from_data(data)
-        return [json.dumps(text, ensure_ascii=False)]
+        return [json.dumps('Hello world', ensure_ascii=False)]
