@@ -16,8 +16,6 @@ tg_settings = TelegramSettings()
 bot = Bot(token=tg_settings.token)
 dp = Dispatcher(bot=bot)
 
-USER_CONTEXT = defaultdict(list)
-
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
