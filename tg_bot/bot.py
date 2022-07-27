@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 from aiogram import Bot, Dispatcher, executor, types
 from pydantic import BaseSettings
 
