@@ -18,7 +18,8 @@ class SomeHandler(BaseHandler):
     def initialize(self, context: Context) -> None:
         self.manifest = context.manifest
         properties = context.system_properties
-        model_dir = properties['model_dir']  # automatically passed by torchserve
+        model_dir = properties['model_dir']  # automatically passed by torchserve, contains whatever 
+        # you put into your .mar file
 
         logger.info('>>> PROPERTIES: %s', properties)
         logger.info('>>> MANIFEST: %s', self.manifest)
